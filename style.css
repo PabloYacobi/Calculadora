@@ -1,0 +1,55 @@
+.btn{
+  margin-top:0px;
+  display:flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  text-align: center;
+  margin:5px;
+  border-radius: 10px;
+  background-color: blue;
+  padding:20px;
+  width:10px;
+  height:10px;
+  float:left;
+  
+}
+#numero{
+margin-top:0px;
+float:right;
+}
+.Operaciones{
+  margin-top:0px;
+  float:left;
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+  text-align:center;
+  
+}
+.btnN{
+  width: 200px;
+  margin:15px;
+  text-align: center;
+  display:flex;
+  flex-wrap:wrap;
+}
+.btn0{
+  border-radius:5px;
+  margin-top:0px;
+  background-color: blue;
+  padding:20px;
+  width:135px;
+  height:15px;
+  float:right;;
+}
+.btnT{
+  align-text:center;
+  float:right;
+  margin-top:180px;
+  border-radius:5px;
+  background-color: blue;
+  padding:20px;
+  width:135px;
+  height:10px;
+  
+}
