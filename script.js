@@ -3,13 +3,22 @@ var numeros = [];
 var resultado = 0;
 var operacionOk = false
 var operacionInicial =true
+var lastOperation= "";
 
- function test(){
-   document.getElementById("titulo1").innerHTML = "OK";
-   console.log("Has pulsado el botón");
- }
+
+function btnNum(numero){
+  
+  if(operacionOk){
+    document.getElementById("numero").value=numero;
+    operacionOk=false;
+  }
+  else{
+    var tmp=document.getElementById("numero").value;
+  document.getElementById("numero").value=tmp+numero;
+  }
   
 
+}
 function btnSumar(){
   operacionOk=true;
   operacionInicial=false;
@@ -17,18 +26,26 @@ function btnSumar(){
     resultado = resultado+valor;
     console.log(resultado);
     document.getElementById("numero").value = resultado;
+    lastOperation="add";
   //var valor = document.getElementById("numero").value;
   //numeros.push(valor);
   //console.log(numeros);
+
 }
 
 function btnRestar(){
-  operacionInicial=false
+ var valor = parseInt(document.getElementById("numero").value);
+ if(operacionInicial){
+   resultado=valor
+ }
+ else{
+   resultado=resultado-valor;
+ }
+  operacionInicial=false;
   operacionOk=true;
-  var valor = parseInt(document.getElementById("numero").value);
-  resultado = resultado-valor;
   console.log(resultado);
   document.getElementById("numero").value = resultado;
+  lastOperation="substract"
 }
 
 function btnMultiplicar(){
@@ -37,6 +54,7 @@ function btnMultiplicar(){
   if(operacionInicial){
     resultado = valor;
     operacionInicial=false;
+    lastOperation="multiply"
   }
   else{
      resultado = resultado*valor;
@@ -47,27 +65,41 @@ function btnMultiplicar(){
 }
 
 function btnDividir(){
-  operacionOk=true;
+  var valor = parseInt(document.getElementById("numero").value);
  if(operacionInicial){
-   resultado=valor;
-   operacionInicial=false;
+   resultado=valor
  }
  else{
-   resultado/valor;
+   resultado=resultado/valor;
  }
-  var valor = parseInt(document.getElementById("numero").value)
-  resultado = resultado/valor;
+  operacionInicial=false;
+  operacionOk=true;
   console.log(resultado);
   document.getElementById("numero").value = resultado;
+  lastOperation="divide";
 }
 
 function total(){
-  var resultado = 0;
-  for(i=0;i<=numeros.length-1;i++){
-    resultado = resultado + parseFloat(numeros[i]);
-    console.log(resultado)
-        document.getElementById("numero").value = resultado;
-      }
-    }
+   if(lastOperation=="add"){
+    btnSumar();
+   }
+   if(lastOperation=="substract"){
+     btnRestar();
+   }
+   if(lastOperation=="divide"){
+     btnDividir();
+   }
+   if(lastOperation=="multiply"){
+     btnMultiplicar();
+   }
 
+}
 
+function btnClear(){
+  document.getElementById("numero").value="";
+  numeros = [];
+  resultado = 0;
+  operacionOk = false
+  operacionInicial =true
+  lastOperation= "";
+}

@@ -1,3 +1,9 @@
+
+
+.whole_container{
+  align-self: center;
+  
+}
 .btn{
   margin-top:0px;
   display:flex;
@@ -6,16 +12,18 @@
   text-align: center;
   margin:5px;
   border-radius: 10px;
-  background-color: blue;
+  background-color: rgb(210, 85, 85;
   padding:20px;
   width:10px;
   height:10px;
-  float:left;
+  font-family: Arial, Helvetica, sans-serif;
   
 }
-#numero{
-margin-top:0px;
-float:right;
+  #numero{
+  margin-top:0px;
+  outline:darkorange;
+  width: 500px;
+  height: 40px;
 }
 .Operaciones{
   margin-top:0px;
@@ -32,24 +40,26 @@ float:right;
   text-align: center;
   display:flex;
   flex-wrap:wrap;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:bold;
 }
 .btn0{
   border-radius:5px;
   margin-top:0px;
-  background-color: blue;
+  background-color: moccasin;
   padding:20px;
-  width:135px;
+  width:130px;
   height:15px;
-  float:right;;
+  float:right;
+  margin-right:15px;
 }
 .btnT{
   align-text:center;
   float:right;
-  margin-top:180px;
   border-radius:5px;
-  background-color: blue;
+  background-color: moccasin;
   padding:20px;
-  width:135px;
+  width:150px;
   height:10px;
   
 }
